@@ -22,3 +22,10 @@ Route::get('/admin', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::resource('categories', 'CategoriesController');
+});
+
+Route::group(['prefix' => 'table', 'as' => 'table.'], function () {
+    Route::get('categories', 'CategoriesController@dataTable')->name('categories');
+});

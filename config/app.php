@@ -170,6 +170,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Codecourse\Notify\NotifyServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +233,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Notify' => Codecourse\Notify\Facades\Notify::class,
 
     ],
 
