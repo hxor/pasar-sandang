@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 10, 2);
-            $table->decimal('weight', 8, 2)->default(0);
+            $table->integer('weight')->nullable();
             $table->boolean('hotoffer')->default(false);
             $table->boolean('stock')->default(false);
             $table->timestamps();

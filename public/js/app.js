@@ -17,4 +17,7 @@ $(document).ready(function () {
             $form.submit() 
         });
     });
+
+    // Select2
+    $(".select2").select2();
 });

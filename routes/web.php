@@ -24,8 +24,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('categories', 'CategoriesController');
+    Route::resource('products', 'ProductsController');
+    Route::get('products/{id}/image', 'ProductsController@imageForm')->name('products.images');
+    Route::post('products/{id}/image', 'ProductsController@imageUpload')->name('products.images.upload');
+    Route::delete('products/{id}/image', 'ProductsController@destroyImage')->name('products.images.destroy');
 });
 
 Route::group(['prefix' => 'table', 'as' => 'table.'], function () {
     Route::get('categories', 'CategoriesController@dataTable')->name('categories');
+    Route::get('products', 'ProductsController@dataTable')->name('products');
 });

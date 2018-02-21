@@ -16,6 +16,7 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Products</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('admin.categories.index') }}">Categories</a></li>
+                        <li><a href="{{ route('admin.products.index') }}">Products</a></li>
                     </ul>
                 </li>
             </ul>

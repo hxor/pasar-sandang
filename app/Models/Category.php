@@ -28,10 +28,21 @@ class Category extends Model
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
+    /**
+     * This Category owned by Many Products
+     */
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
+
     public static function boot()
     {
         parent::boot();
+        
         static::deleting(function ($model) {
+            // Remove relation category product
+            $model->products()->detach();
             // remove parent from this category's child
             foreach ($model->childs as $child) {
                 $child->parent_id = null;

@@ -16,6 +16,10 @@
     <link href="{{ asset('assets/back/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!--alerts CSS -->
     <link href="{{ asset('assets/back/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css">
+    {{--  Select2  --}}
+    <link href="{{ asset('assets/back/plugins/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+    {{--  Dropzone  --}}
+    <link href="{{ asset('assets/back/plugins/dropzone-master/dist/dropzone.css') }}" rel="stylesheet" type="text/css" />
     <!-- Custom CSS -->
     <link href="{{ asset('assets/back/css/style.css') }}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -121,6 +125,12 @@
     <script src="{{ asset('assets/back/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <!-- Sweet-Alert  -->
     <script src="{{ asset('assets/back/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    {{--  Select2  --}}
+    <script src="{{ asset('assets/back/plugins/select2/dist/js/select2.full.min.js') }}" type="text/javascript"></script>
+    {{--  TinyMCE  --}}
+    <script src="{{ asset('assets/back/plugins/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
+    <!-- Dropzone Plugin JavaScript -->
+    <script src="{{ asset('assets/back/plugins/dropzone-master/dist/dropzone.js') }}"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
