@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.front.app');
+    return view('pages.front.home.index');
 });
+
+Route::get('/product', 'HomeController@productAll')->name('product.list');
+Route::get('/product/{slug}', 'HomeController@productDetail')->name('product.detail');
+Route::get('/category/{category}', 'HomeController@categoryProduct')->name('product.category');
 
 Route::get('/admin', function () {
     return view('layouts.back.app');

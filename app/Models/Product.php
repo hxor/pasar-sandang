@@ -28,6 +28,19 @@ class Product extends Model
     }
 
     /**
+     * Get path to product photo or give placeholder if its not set
+     * @return string
+     */
+    public function getPhotoPathAttribute()
+    {
+        if ($this->photo !== '') {
+            return url('/images/products/' . $this->images()->first()->path);
+        } else {
+            return 'http://placehold.it/850x618';
+        }
+    }
+
+    /**
      * Get Category Lists Product
      * by category_lists accessor
      */
