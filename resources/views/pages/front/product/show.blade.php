@@ -26,8 +26,9 @@
                 <article class="col-main">
                     <div class="product-view">
                         <div class="product-essential">
-                            <form action="#" method="post" id="product_addtocart_form">
-                                <input name="form_key" value="6UbXroakyQlbfQzK" type="hidden">
+                            <form action="{{ route('cart.add') }}" method="post" id="product_addtocart_form">
+                                {{ csrf_field() }}
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <div class="product-img-box col-lg-4 col-sm-5 col-xs-12">
                                     <div class="new-label new-top-left"> New </div>
                                     <div class="product-image">
@@ -63,12 +64,12 @@
                                                 <div class="custom pull-left"> <span class="qty-label">QTY:</span>
                                                     <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;"
                                                         class="reduced items-count" type="button"><i class="fa fa-minus">&nbsp;</i></button>
-                                                    <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+                                                    <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="quantity">
                                                     <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;"
                                                         class="increase items-count" type="button"><i class="fa fa-plus">&nbsp;</i></button>
                                                 </div>
                                             </div>
-                                            <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button">Add to Cart</button>
+                                            <button class="button btn-cart" title="Add to Cart" type="submit">Add to Cart</button>
                                         </div>
                                     </div>
                                     <div class="short-description">

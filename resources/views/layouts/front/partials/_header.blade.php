@@ -38,38 +38,51 @@
                 <div class="top-cart-contain">
                     <!-- Top Cart -->
                     <div class="mini-cart">
-                        <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="shopping_cart.html"><span class="price hidden-xs">Shopping Cart</span> <span class="cart_count hidden-xs">2 Items/ $4580</span> </a>                            </div>
+                        <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> 
+                            <a href="shopping_cart.html">
+                                <span class="price hidden-xs">Shopping Cart</span> 
+                                <span class="cart_count hidden-xs">({{ Cart::content()->count() }}) Items</span> 
+                            </a>                            
+                        </div>
+                        @if (Cart::content()->count() > 0)
                         <div>
                             <div class="top-cart-content">
                                 <!--block-subtitle-->
                                 <ul class="mini-products-list" id="cart-sidebar">
-                                    <li class="item first">
-                                        <div class="item-inner"> <a class="product-image" title="Retis lapen casen" href="#l"><img alt="Retis lapen casen" src="{{ asset('assets/front/products-images/product1.jpg') }}"> </a>
-                                            <div class="product-details">
-                                                <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit"
-                                                        title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a>                                                    </div>
-                                                <!--access--><strong>1</strong> x <span class="price">$179.99</span>
-                                                <p class="product-name"><a href="#">Retis lapen casen...</a> </p>
+                                    @foreach (Cart::content() as $item)
+                                        <li class="item">
+                                            <div class="item-inner"> 
+                                                <a class="product-image" title="{{ $item->name }}" href="#l">
+                                                    <img alt="{{ $item->name }}" src="{{ $item->options->photo }}"> 
+                                                </a>
+                                                <div class="product-details">
+                                                    <div class="access">
+                                                        <a class="btn-remove1" title="Remove This Item" href="">Remove</a>
+                                                        {!! Form::open(['route' => ['cart.delete', $item->rowId], 'method' => 'DELETE', 'class' => 'form-inline']) !!}
+                                                            <button type="submit" class="btn-remove1">
+                                                                    Remove
+                                                            </button>
+                                                        {!! Form::close() !!}
+                                                        <a class="btn-edit" title="Edit item" href="#">
+                                                            <i class="icon-pencil"></i><span class="hidden">Edit item</span>
+                                                        </a>                                                    
+                                                    </div>
+                                                    <!--access-->
+                                                    <strong>{{ $item->qty }}</strong> x
+                                                    <span class="price">Rp{{ number_format($item->price,2,",",".") }}</span>
+                                                    <p class="product-name"><a href="#">{{ $item->name }}</a> </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="item last">
-                                        <div class="item-inner"> <a class="product-image" title="Retis lapen casen" href="product_detail.html"><img alt="Retis lapen casen" src="{{ asset('assets/front/products-images/product1.jpg') }}"> </a>
-                                            <div class="product-details">
-                                                <div class="access"><a class="btn-remove1" title="Remove This Item" href="#">Remove</a> <a class="btn-edit"
-                                                        title="Edit item" href="#"><i class="icon-pencil"></i><span class="hidden">Edit item</span></a>                                                    </div>
-                                                <!--access--><strong>1</strong> x <span class="price">$80.00</span>
-                                                <p class="product-name"><a href="#">Retis lapen casen...</a> </p>
-                                            </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    @endforeach
                                 </ul>
                                 <!--actions-->
                                 <div class="actions">
                                     <button class="btn-checkout" title="Checkout" type="button"><span>Checkout</span> </button>
-                                    <a href="shopping_cart.html" class="view-cart"><span>View Cart</span></a> </div>
+                                    <a href="{{ route('cart.index') }}" class="view-cart"><span>View Cart</span></a> </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                     <!-- Top Cart -->
                     <div id="ajaxconfig_info" style="display:none"> <a href="#/"></a>

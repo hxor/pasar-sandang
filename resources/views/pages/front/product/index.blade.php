@@ -70,8 +70,13 @@
                                                         </div>
                                                     </div>
                                                     <div class="action">
-                                                        <button class="button btn-cart" type="button" title="" data-original-title="Add to Cart"><span>Add to Cart</span></button>
-                                                    </div>
+                                                            <form action="{{ route('cart.add') }}" method="post">
+                                                                {{ csrf_field() }}
+                                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                                                <input type="hidden" name="quantity" value=1>
+                                                                <button class="button btn-cart" type="submit" title="" data-original-title="Add to Cart"><span>Add to Cart</span> </button>
+                                                            </form>
+                                                        </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -142,29 +147,32 @@
                     <div class="block-title ">My Cart</div>
                     <div class="block-content">
                         <div class="summary">
-                            <p class="amount">There are <a href="shopping_cart.html">2 items</a> in your cart.</p>
-                            <p class="subtotal"> <span class="label">Cart Subtotal:</span> <span class="price">$27.99</span> </p>
+                            <p class="amount">There are <a href="shopping_cart.html">{{ Cart::content()->count() }} items</a> in your cart.</p>
+                            <p class="subtotal"> <span class="label">Cart Subtotal:</span> <span class="price">Rp{{ Cart::total() }}</span> </p>
                         </div>
                         <div class="ajax-checkout">
                             <button class="button button-checkout" title="Submit" type="submit"><span>Checkout</span></button>
                         </div>
                         <p class="block-subtitle">Recently added item(s) </p>
                         <ul>
-                            <li class="item"> <a href="shopping_cart.html" title="Fisher-Price Bubble Mower" class="product-image"><img src="{{ asset('assets/front/products-images/product1.jpg') }}" alt="Fisher-Price Bubble Mower"></a>
+                            @foreach (Cart::content() as $item)
+                            <li class="item"> 
+                                <a href="shopping_cart.html" title="{{ $item->name }}" class="product-image">
+                                    <img src="{{ $item->options->photo }}" alt="{{ $item->name }}">
+                                </a>
                                 <div class="product-details">
-                                    <div class="access"> <a href="shopping_cart.html" title="Remove This Item" class="btn-remove1"> <span class="icon"></span> Remove </a>                                        </div>
-                                    <strong>1</strong> x <span class="price">$19.99</span>
-                                    <p class="product-name"> <a href="shopping_cart.html">Retis lapen casen...</a> </p>
+                                    <div class="access">
+                                        {!! Form::open(['route' => ['cart.delete', $item->rowId], 'method' => 'DELETE', 'class' => 'form-inline']) !!}
+                                            <button type="submit" class="btn-remove1" title="Remove This Item">
+                                                    Remove
+                                            </button>
+                                        {!! Form::close() !!}                                                 
+                                    </div>
+                                    <strong>{{ $item->qty }}</strong> x <span class="price">Rp{{ number_format($item->price,2,",",".") }}</span>
+                                    <p class="product-name"> <a href="shopping_cart.html">{{ $item->name }}</a> </p>
                                 </div>
                             </li>
-                            <li class="item last"> <a href="shopping_cart.html" title="Prince Lionheart Jumbo Toy Hammock" class="product-image"><img src="{{ asset('assets/front/products-images/product1.jpg') }}" alt="Prince Lionheart Jumbo Toy Hammock"></a>
-                                <div class="product-details">
-                                    <div class="access"> <a href="shopping_cart.html" title="Remove This Item" class="btn-remove1"> <span class="icon"></span> Remove </a>                                        </div>
-                                    <strong>1</strong> x <span class="price">$8.00</span>
-                                    <p class="product-name"> <a href="shopping_cart.html"> Retis lapen casen...</a> </p>
-                                    <!--access clearfix-->
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

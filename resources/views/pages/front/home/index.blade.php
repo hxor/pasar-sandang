@@ -120,7 +120,12 @@
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="action">
-                                                                                    <button class="button btn-cart" type="button" title="" data-original-title="Add to Cart"><span>Add to Cart</span> </button>
+                                                                                    <form action="{{ route('cart.add') }}" method="post">
+                                                                                        {{ csrf_field() }}
+                                                                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                                                                        <input type="hidden" name="quantity" value=1>
+                                                                                        <button class="button btn-cart" type="submit" title="" data-original-title="Add to Cart"><span>Add to Cart</span> </button>
+                                                                                    </form>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

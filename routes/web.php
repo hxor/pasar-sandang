@@ -19,6 +19,14 @@ Route::get('/product', 'HomeController@productAll')->name('product.list');
 Route::get('/product/{slug}', 'HomeController@productDetail')->name('product.detail');
 Route::get('/category/{category}', 'HomeController@categoryProduct')->name('product.category');
 
+Route::group(['prefix' => 'cart', 'as' => 'cart.'], function () {
+    Route::get('/', 'CartController@index')->name('index');
+    Route::post('add', 'CartController@addProduct')->name('add');
+    Route::put('update/{id}', 'CartController@updateProduct')->name('update');
+    Route::delete('delete/{id}', 'CartController@deleteProduct')->name('delete');
+    Route::get('destroty', 'CartController@destroyCart')->name('destroy');
+});
+
 Route::get('/admin', function () {
     return view('layouts.back.app');
 });
