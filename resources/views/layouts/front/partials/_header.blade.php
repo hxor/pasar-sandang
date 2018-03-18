@@ -78,7 +78,9 @@
                                 </ul>
                                 <!--actions-->
                                 <div class="actions">
-                                    <button class="btn-checkout" title="Checkout" type="button"><span>Checkout</span> </button>
+                                    <a href="{{ route('checkout.index') }}">
+                                        <button class="btn-checkout" title="Checkout" type="button"><span>Checkout</span> </button>
+                                    </a>
                                     <a href="{{ route('cart.index') }}" class="view-cart"><span>View Cart</span></a> </div>
                             </div>
                         </div>

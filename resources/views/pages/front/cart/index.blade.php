@@ -124,7 +124,9 @@
                                 </table>
                                 <ul class="checkout">
                                 <li>
-                                    <button class="button btn-proceed-checkout" title="Proceed to Checkout" type="button"><span>Proceed to Checkout</span></button>
+                                    <a href="{{ route('checkout.index') }}">
+                                        <button class="button btn-proceed-checkout" title="Proceed to Checkout" type="button"><span>Proceed to Checkout</span></button>
+                                    </a>
                                 </li>
                                 <br>
                                 </ul>

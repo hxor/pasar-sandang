@@ -19,6 +19,14 @@ Route::get('/product', 'HomeController@productAll')->name('product.list');
 Route::get('/product/{slug}', 'HomeController@productDetail')->name('product.detail');
 Route::get('/category/{category}', 'HomeController@categoryProduct')->name('product.category');
 
+Route::get('/checkout', 'CheckoutController@index')->name('checkout.index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+Route::get('/checkout/confirm', 'CheckoutController@confirm')->name('checkout.confirm');
+Route::post('/checkout/order', 'CheckoutController@order')->name('checkout.order');
+
+Route::get('select/city', 'CheckoutController@getCities')->name('select.city');
+Route::get('select/subdistrict', 'CheckoutController@getDistrict')->name('select.subdistrict');
+
 Route::group(['prefix' => 'cart', 'as' => 'cart.'], function () {
     Route::get('/', 'CartController@index')->name('index');
     Route::post('add', 'CartController@addProduct')->name('add');

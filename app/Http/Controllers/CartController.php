@@ -11,6 +11,7 @@ class CartController extends Controller
 	public function index()
 	{
 		return view('pages.front.cart.index');
+		return Cart::content();
 	}
 
     public function addProduct(Request $request)
@@ -21,7 +22,8 @@ class CartController extends Controller
     	]);
 
     	$product = Product::find($request->get('product_id'));
-    	$quantity = $request->get('quantity');
+		$quantity = $request->get('quantity');
+		// $weight = number_format(($product->weight / 1000) * $quantity, 2);
 		
 		$cart = Cart::add([
 			'id' => $product->id,
@@ -30,7 +32,7 @@ class CartController extends Controller
 			'price' => $product->price,
 			'options' => [
 				'photo' => $product->photo_path,
-				'weight' => 10,
+				'weight' => $product->weight,
 				'slug' => $product->slug
 			]
 		]);
