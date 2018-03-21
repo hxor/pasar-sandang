@@ -5,9 +5,6 @@
                 <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 pull-right hidden-xs">
                     <div class="toplinks">
                         <div class="links">
-                            <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a> </div>
-                            <div class="demo"><a title="Blog" href="blog.html"><span class="hidden-xs">Blog</span></a> </div>
-                            <div class="login"><a href="about_us.html"><span class="hidden-xs"> About Us </span></a> </div>
                         </div>
                     </div>
                     <!-- End Header Top Links -->
@@ -141,8 +138,10 @@
                     <div class="col-lg-9 col-md-9 col-xs-12 col-sm-9 offer-block"> 
                         <a href="{{ url('/') }}">Home</a> 
                         <a href="{{ route('product.list') }}">Shop</a>
-                        <a href="{{ route('confirm.index') }}">Confirm Order</a>                          
-                        <span>Pesan online atau bisa hubungi kami di (+1800) 000 8808</span> 
+                        <a href="{{ route('confirm.index') }}">Confirm Order</a>  
+                        <a href="#">Check Order</a>  
+                        <a href="{{ route('about') }}">About Us</a>                                                                            
+                        <span>Order online or call us (+1800) 000 8808</span> 
                     </div>
                 </div>
             </div>

@@ -75,46 +75,98 @@
           </article>
           <!--	///*///======    End article  ========= //*/// --> 
         </div>
-         <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
+        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
             <div class="side-banner"><img src="{{ asset('assets/front/images/side-banner.jpg') }}" alt="banner"></div>
-            <div class="block block-progress">
-              <div class="block-title ">Your Checkout</div>
-              <div class="block-content">
-                <dl>
-                  <dt class="complete"> Billing Address <span class="separator">|</span> <a onClick="checkout.gotoSection('billing'); return false;" href="#billing">Change</a> </dt>
-                  <dd class="complete">
-                    <address>
-                    John Doe<br>
-                    Abc Company<br>
-                    23 North Main Stree<br>
-                    Windsor<br>
-                    Holtsville,  New York, 00501<br>
-                    United States<br>
-                    T: 5465465 <br>
-                    F: 466523
-                    </address>
-                  </dd>
-                  <dt class="complete"> Shipping Address <span class="separator">|</span> <a onClick="checkout.gotoSection('shipping');return false;" href="#payment">Change</a> </dt>
-                  <dd class="complete">
-                    <address>
-                    John Doe<br>
-                    Abc Company<br>
-                    23 North Main Stree<br>
-                    Windsor<br>
-                    Holtsville,  New York, 00501<br>
-                    United States<br>
-                    T: 5465465 <br>
-                    F: 466523
-                    </address>
-                  </dd>
-                  <dt class="complete"> Shipping Method <span class="separator">|</span> <a onClick="checkout.gotoSection('shipping_method'); return false;" href="#shipping_method">Change</a> </dt>
-                  <dd class="complete"> Flat Rate - Fixed <br>
-                    <span class="price">$15.00</span> </dd>
-                  <dt> Payment Method </dt>
-                </dl>
-              </div>
+            
+            <div class="testimonials">
+                <div class="ts-testimonial-widget">
+                    <div class="slider-items-products">
+                        <div id="testimonials-slider" class="product-flexslider hidden-buttons home-testimonials">
+                            <div class="slider-items slider-width-col4 fadeInUp owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                <div class="holder">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
+                                        fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
+                                        Aliquam erat volutpat...</p>
+                                    <div class="testimonial-arrow-down"></div>
+                                    <div class="thumb">
+                                        <div class="customer-img"> <img src="{{ asset('assets/front/images/photo1.jpg') }}" alt="Saraha Smith">                                                </div>
+                                        <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">Saraha Smith</a></strong> <span>Happy Customer</span>                                                </div>
+                                    </div>
+                                </div>
+                                <div class="holder">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
+                                        fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
+                                        Aliquam erat volutpat...</p>
+                                    <div class="testimonial-arrow-down"></div>
+                                    <div class="thumb">
+                                        <div class="customer-img"> <img src="{{ asset('assets/front/images/photo.jpg') }}" alt="Stephen Doe"> </div>
+                                        <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">Stephen Doe</a></strong> <span>Happy Customer</span>                                                </div>
+                                    </div>
+                                </div>
+                                <div class="holder">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
+                                        fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
+                                        Aliquam erat volutpat...</p>
+                                    <div class="testimonial-arrow-down"></div>
+                                    <div class="thumb">
+                                        <div class="customer-img"> <img src="{{ asset('assets/front/images/photo1.jpg') }}" alt="Mark doe"> </div>
+                                        <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">Mark doe</a></strong> <span>Happy Customer</span>                                                </div>
+                                    </div>
+                                </div>
+                                <div class="holder">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
+                                        fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
+                                        Aliquam erat volutpat...</p>
+                                    <div class="testimonial-arrow-down"></div>
+                                    <div class="thumb">
+                                        <div class="customer-img"> <img src="{{ asset('assets/front/images/photo.jpg') }}" alt="John Doe"> </div>
+                                        <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">John Doe</a></strong> <span>Happy Customer</span>                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </aside>
+            <div>
+                <div class="our-features-box">
+                    <div class="row">
+                        <div class="col-lg-12 space">
+                            <div class="feature-box first"> <span class="fa fa-truck"></span>
+                                <div class="content">
+                                    <h3>Worldwide Delivery</h3>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 space">
+                            <div class="feature-box"> <span class="fa fa-headphones"></span>
+                                <div class="content">
+                                    <h3>Help Center</h3>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 space">
+                            <div class="feature-box"> <span class="fa fa-share"></span>
+                                <div class="content">
+                                    <h3>Easy RETURNS</h3>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 space">
+                            <div class="feature-box last"> <span class="fa fa-phone"></span>
+                                <div class="content">
+                                    <h3>Helpline +0800 567 345</h3>
+                                    <p>Lorem ipsum dolor sit amet</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
       </div>
     </div>
 </section>

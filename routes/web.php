@@ -14,6 +14,12 @@
 Route::get('/', function () {
     return view('pages.front.home.index');
 });
+Route::get('/about', function () {
+    return view('pages.front.page.about');
+})->name('about');
+Route::get('/faq', function () {
+    return view('pages.front.page.faq');
+})->name('faq');
 
 Route::get('/product', 'HomeController@productAll')->name('product.list');
 Route::get('/product/{slug}', 'HomeController@productDetail')->name('product.detail');

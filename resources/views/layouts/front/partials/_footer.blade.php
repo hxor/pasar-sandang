@@ -26,7 +26,7 @@
                         <h4>Shopping Guide</h4>
                         <ul class="links">
                             <li><a href="blog.html" title="How to buy">Blog</a></li>
-                            <li><a href="faq.html" title="FAQs">FAQs</a></li>
+                            <li><a href="{{ route('faq') }}" title="FAQs">FAQs</a></li>
                             <li><a href="#" title="Payment">Payment</a></li>
                             <li><a href="#" title="Shipment">Shipment</a></li>
                             <li><a href="#" title="Where is my order?">Where is my order?</a></li>
