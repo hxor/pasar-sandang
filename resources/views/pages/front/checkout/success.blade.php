@@ -28,7 +28,7 @@
                                         <p>Invoice Code : <strong>{{ $order->invoice }}</strong></p>
                                         <p>Total : <strong>Rp{{ number_format($order->grandtotal,2,",",".") }}</strong></p>
                                         <p>If you already transfer, please confirm payment at following link. Orders will be processed thereafter.</p>
-                                        <p><a href="#">Confirm Payment</a></p>
+                                        <p><a href="{{ route('confirm.index') }}">Confirm Payment</a></p>
                                     </div>
                                 </div>
                                 </div>

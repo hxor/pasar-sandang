@@ -24,6 +24,9 @@ Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::get('/checkout/confirm', 'CheckoutController@confirm')->name('checkout.confirm');
 Route::post('/checkout/order', 'CheckoutController@order')->name('checkout.order');
 
+Route::get('/order/confirm', 'ConfirmController@index')->name('confirm.index');
+Route::post('/order/confirm', 'ConfirmController@store')->name('confirm.store');
+
 Route::get('select/city', 'CheckoutController@getCities')->name('select.city');
 Route::get('select/subdistrict', 'CheckoutController@getDistrict')->name('select.subdistrict');
 

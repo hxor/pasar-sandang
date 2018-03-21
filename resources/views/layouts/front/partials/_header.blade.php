@@ -140,7 +140,8 @@
                 <div class="features-block">
                     <div class="col-lg-9 col-md-9 col-xs-12 col-sm-9 offer-block"> 
                         <a href="{{ url('/') }}">Home</a> 
-                        <a href="{{ route('product.list') }}">Shop</a>                      
+                        <a href="{{ route('product.list') }}">Shop</a>
+                        <a href="{{ route('confirm.index') }}">Confirm Order</a>                          
                         <span>Pesan online atau bisa hubungi kami di (+1800) 000 8808</span> 
                     </div>
                 </div>
