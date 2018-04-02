@@ -23,6 +23,8 @@ class CreateOrdersTable extends Migration
             $table->decimal('total', 10, 2);
             $table->decimal('grandtotal', 10, 2);
             $table->string('status');
+            $table->string('courier')->nullable();
+            $table->string('airway_number')->nullable();
             $table->timestamps();
         });
 

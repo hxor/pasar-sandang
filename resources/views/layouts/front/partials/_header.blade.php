@@ -139,7 +139,7 @@
                         <a href="{{ url('/') }}">Home</a> 
                         <a href="{{ route('product.list') }}">Shop</a>
                         <a href="{{ route('confirm.index') }}">Confirm Order</a>  
-                        <a href="#">Check Order</a>  
+                        <a href="{{ route('check.index') }}">Check Order</a>  
                         <a href="{{ route('about') }}">About Us</a>                                                                            
                         <span>Order online or call us (+1800) 000 8808</span> 
                     </div>

@@ -27,6 +27,11 @@ class Product extends Model
         return $this->belongsToMany(Category::class);
     }
 
+    public function orders()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
+
     /**
      * Get path to product photo or give placeholder if its not set
      * @return string

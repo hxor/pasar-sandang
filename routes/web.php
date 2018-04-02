@@ -33,6 +33,10 @@ Route::post('/checkout/order', 'CheckoutController@order')->name('checkout.order
 Route::get('/order/confirm', 'ConfirmController@index')->name('confirm.index');
 Route::post('/order/confirm', 'ConfirmController@store')->name('confirm.store');
 
+Route::get('/order/check', 'CheckorderController@index')->name('check.index');
+Route::post('/order/check', 'CheckorderController@store')->name('check.store');
+Route::get('/order/check/{id}/detail', 'CheckorderController@show')->name('check.show');
+
 Route::get('select/city', 'CheckoutController@getCities')->name('select.city');
 Route::get('select/subdistrict', 'CheckoutController@getDistrict')->name('select.subdistrict');
 

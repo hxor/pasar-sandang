@@ -81,9 +81,9 @@ class CheckoutController extends Controller
             'name' => session()->get('checkout.address.name'),
             'phone' => session()->get('checkout.address.phone'),
             'address' => session()->get('checkout.address.detail')
-            . ', ' . Province::where('id',session()->get('checkout.address.province_id'))->first()->name
-            . ', ' . Regency::where('id',session()->get('checkout.address.regency_id'))->first()->name
             . ', ' . District::where('id',session()->get('checkout.address.district_id'))->first()->name
+            . ', ' . Regency::where('id',session()->get('checkout.address.regency_id'))->first()->name
+            . ', ' . Province::where('id',session()->get('checkout.address.province_id'))->first()->name
             . ', ' . session()->get('checkout.address.postcode'),
             'shippfee' => number_format(session()->get('chekcout.address.fee'),2,".",""),
             'total' => number_format((int)str_replace('.', '', Cart::total()),2,".",""),
