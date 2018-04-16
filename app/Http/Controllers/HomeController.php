@@ -32,7 +32,20 @@ class HomeController extends Controller
     public function productDetail($slug)
     {
         $product = Product::where('slug', $slug)->first();
-        return view('pages.front.product.show', compact('product'));
+        $category = $product->categories()->first();
+        $related = Product::whereHas('categories', function ($q) use ($category) {
+            $q->where('category_id', $category->id);
+        })->get();
+
+        if ($related->count() >= 7) {
+            $relates = $related->random(7);
+        } else if($related->count() < 7) {
+            $relates[] = $related->random();
+        } else {
+            $relates = null;
+        }
+
+        return view('pages.front.product.show', compact('product', 'relates'));
     }
 
     public function categoryProduct($slug)

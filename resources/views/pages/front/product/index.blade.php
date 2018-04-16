@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-sm-push-3">
-                <!-- Breadcrumbs -->
+                {{-- <!-- Breadcrumbs -->
                 <div class="breadcrumbs">
                     <ul>
                         <li class="home"> <a href="index.html" title="Go to Home Page">Home</a> <span>/</span> </li>
@@ -25,7 +25,7 @@
                 <!-- Breadcrumbs End -->
                 <div class="page-title">
                     <h2 class="page-heading"> <span class="page-heading-title">Women</span> </h2>
-                </div>
+                </div> --}}
                 <div class="category-description std">
                     <div class="slider-items-products">
                         <div id="category-desc-slider" class="product-flexslider hidden-buttons">
