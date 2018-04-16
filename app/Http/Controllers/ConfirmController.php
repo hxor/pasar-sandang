@@ -45,7 +45,7 @@ class ConfirmController extends Controller
                 return redirect()->back();
             }
             if ($request->hasFile('file')) {
-                $data['file'] = $this->savePhoto($request->file('file'), $data['name']);
+                $data['file'] = $this->savePhoto($request->file('file'), str_slug($data['name'], '-'));
                 $data['order_id'] = $order->id;
                 $confirm = OrderConfirm::create($data);
                 return redirect('/');
