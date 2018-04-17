@@ -19,6 +19,11 @@
                         <li><a href="{{ route('admin.products.index') }}">Products</a></li>
                     </ul>
                 </li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Banner</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('admin.sliders.index') }}">Sliders</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

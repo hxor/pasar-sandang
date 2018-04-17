@@ -171,6 +171,8 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -234,6 +236,7 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Notify' => Codecourse\Notify\Facades\Notify::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
