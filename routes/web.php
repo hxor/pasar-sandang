@@ -62,10 +62,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::post('products/{id}/image', 'ProductsController@imageUpload')->name('products.images.upload');
     Route::delete('products/{id}/image', 'ProductsController@destroyImage')->name('products.images.destroy');
     Route::resource('sliders', 'SlidersController');
+    Route::resource('sponsors', 'SponsorsController');
 });
 
 Route::group(['prefix' => 'table', 'as' => 'table.'], function () {
     Route::get('categories', 'CategoriesController@dataTable')->name('categories');
     Route::get('products', 'ProductsController@dataTable')->name('products');
     Route::get('sliders', 'SlidersController@dataTable')->name('sliders');
+    Route::get('sponsors', 'SponsorsController@dataTable')->name('sponsors');
 });
