@@ -27,9 +27,9 @@ class ProductsTableSeeder extends Seeder
             'stock' => true,
         ]);
         $product->images()->saveMany([
-            new ProductGallery(['path' => 'product-1-1.jpg']),
-            new ProductGallery(['path' => 'product-1-2.jpg']),
-            new ProductGallery(['path' => 'product-1-3.jpg']),
+            new ProductGallery(['path' => 'product-1-1.jpeg']),
+            new ProductGallery(['path' => 'product-1-2.jpeg']),
+            new ProductGallery(['path' => 'product-1-3.jpeg']),
         ]);
         $product->categories()->saveMany([
             $category, $category2, $category3

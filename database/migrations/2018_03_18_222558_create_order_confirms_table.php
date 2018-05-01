@@ -17,6 +17,8 @@ class CreateOrderConfirmsTable extends Migration
             $table->increments('id');
             $table->integer('order_id')->unsigned();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->integer('bank_id')->unsigned();
+            $table->foreign('bank_id')->references('id')->on('banks');
             $table->string('bank');
             $table->decimal('amount', 10, 2);
             $table->string('name');

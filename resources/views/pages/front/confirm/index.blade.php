@@ -36,7 +36,7 @@
                                 <li>
                                     <label for="bank">I Transfer To</label>
                                     <div class="input-box">
-                                        {!! Form::select('bank', ['' => '-', 'bca' => 'BCA', 'bni' => 'BNI', 'bri' => 'BRI' ], null, ['class' => 'required-entry validate-select', 'id' => 'province_selector']) !!}
+                                        {!! Form::select('bank_id', ['' => '-'] + $bank, null, ['class' => 'required-entry validate-select']) !!}
                                     </div>
                                 </li>
                                 <li>

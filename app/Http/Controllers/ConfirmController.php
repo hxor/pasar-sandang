@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OrderConfirm;
 use App\Models\Order;
+use App\Models\Bank;
 use Illuminate\Http\Request;
 
 class ConfirmController extends Controller
@@ -24,20 +25,21 @@ class ConfirmController extends Controller
 
     public function index()
     {
-        return view('pages.front.confirm.index');
+        $bank = Bank::pluck('title', 'id')->all();
+        return view('pages.front.confirm.index', compact('bank'));
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
             'invoice' => 'required', 
-            'bank' => 'required',
+            'bank_id' => 'required',
             'amount' => 'required',
             'name' => 'required',
             'file' => 'required'
         ]);
 
-        $data = $request->only('invoice', 'bank', 'amount', 'name', 'note');
+        $data = $request->only('invoice', 'bank_id', 'amount', 'name', 'note');
         $order = Order::where('invoice', $data['invoice'])->first();
 
         if ($order) {

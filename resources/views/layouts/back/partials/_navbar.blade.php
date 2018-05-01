@@ -25,6 +25,11 @@
                         <li><a href="{{ route('admin.sponsors.index') }}">Sponsors</a></li>
                     </ul>
                 </li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Setting</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('admin.bank.index') }}">Bank</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

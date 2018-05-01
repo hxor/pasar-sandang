@@ -63,6 +63,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::delete('products/{id}/image', 'ProductsController@destroyImage')->name('products.images.destroy');
     Route::resource('sliders', 'SlidersController');
     Route::resource('sponsors', 'SponsorsController');
+    Route::resource('bank', 'BankController');
 });
 
 Route::group(['prefix' => 'table', 'as' => 'table.'], function () {
@@ -70,4 +71,5 @@ Route::group(['prefix' => 'table', 'as' => 'table.'], function () {
     Route::get('products', 'ProductsController@dataTable')->name('products');
     Route::get('sliders', 'SlidersController@dataTable')->name('sliders');
     Route::get('sponsors', 'SponsorsController@dataTable')->name('sponsors');
+    Route::get('bank', 'BankController@dataTable')->name('bank');
 });
