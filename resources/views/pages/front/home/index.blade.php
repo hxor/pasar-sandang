@@ -774,46 +774,16 @@
                         <div class="slider-items-products">
                             <div id="testimonials-slider" class="product-flexslider hidden-buttons home-testimonials">
                                 <div class="slider-items slider-width-col4 fadeInUp owl-carousel owl-theme" style="opacity: 1; display: block;">
-                                    <div class="holder">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
-                                            fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
-                                            Aliquam erat volutpat...</p>
-                                        <div class="testimonial-arrow-down"></div>
-                                        <div class="thumb">
-                                            <div class="customer-img"> <img src="{{ asset('assets/front/images/photo1.jpg') }}" alt="Saraha Smith">                                                </div>
-                                            <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">Saraha Smith</a></strong> <span>Happy Customer</span>                                                </div>
+                                    @foreach (App\Models\Testimony::where('status', 1)->get() as $data)
+                                        <div class="holder">
+                                            <p>{{ $data->content }}</p>
+                                            <div class="testimonial-arrow-down"></div>
+                                            <div class="thumb">
+                                                <div class="customer-img"> <img src="{{ asset('assets/front/images/photo1.jpg') }}" alt="{{ $data->name }}"> </div>
+                                                <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">{{ $data->name }}</a></strong> <span>{{ $data->title }}</span>                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="holder">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
-                                            fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
-                                            Aliquam erat volutpat...</p>
-                                        <div class="testimonial-arrow-down"></div>
-                                        <div class="thumb">
-                                            <div class="customer-img"> <img src="{{ asset('assets/front/images/photo.jpg') }}" alt="Stephen Doe"> </div>
-                                            <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">Stephen Doe</a></strong> <span>Happy Customer</span>                                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="holder">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
-                                            fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
-                                            Aliquam erat volutpat...</p>
-                                        <div class="testimonial-arrow-down"></div>
-                                        <div class="thumb">
-                                            <div class="customer-img"> <img src="{{ asset('assets/front/images/photo1.jpg') }}" alt="Mark doe"> </div>
-                                            <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">Mark doe</a></strong> <span>Happy Customer</span>                                                </div>
-                                        </div>
-                                    </div>
-                                    <div class="holder">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lid est laborum dolo rumes
-                                            fugats untras. dolore magna aliquam erat volutpat. Aenean est auctorwisiet urna.
-                                            Aliquam erat volutpat...</p>
-                                        <div class="testimonial-arrow-down"></div>
-                                        <div class="thumb">
-                                            <div class="customer-img"> <img src="{{ asset('assets/front/images/photo.jpg') }}" alt="John Doe"> </div>
-                                            <div class="customer-bio"> <strong class="name"><a href="#" target="_blank">John Doe</a></strong> <span>Happy Customer</span>                                                </div>
-                                        </div>
-                                    </div>
+                                    @endforeach                                    
                                 </div>
                             </div>
                         </div>

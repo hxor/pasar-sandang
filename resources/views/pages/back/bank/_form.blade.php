@@ -1,5 +1,5 @@
 <div class="form-body">
-    <h3 class="card-title">Sponsor Banner</h3>
+    <h3 class="card-title">Bank</h3>
     <hr>
     <div class="row p-t-20">
         <div class="col-md-12">

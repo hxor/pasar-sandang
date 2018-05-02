@@ -45,7 +45,7 @@ Route::group(['prefix' => 'cart', 'as' => 'cart.'], function () {
     Route::post('add', 'CartController@addProduct')->name('add');
     Route::put('update/{id}', 'CartController@updateProduct')->name('update');
     Route::delete('delete/{id}', 'CartController@deleteProduct')->name('delete');
-    Route::get('destroty', 'CartController@destroyCart')->name('destroy');
+    Route::get('destroy', 'CartController@destroyCart')->name('destroy');
 });
 
 Route::get('/admin', function () {
@@ -64,6 +64,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('sliders', 'SlidersController');
     Route::resource('sponsors', 'SponsorsController');
     Route::resource('bank', 'BankController');
+    Route::resource('testi', 'TestiController');
 });
 
 Route::group(['prefix' => 'table', 'as' => 'table.'], function () {
@@ -72,4 +73,5 @@ Route::group(['prefix' => 'table', 'as' => 'table.'], function () {
     Route::get('sliders', 'SlidersController@dataTable')->name('sliders');
     Route::get('sponsors', 'SponsorsController@dataTable')->name('sponsors');
     Route::get('bank', 'BankController@dataTable')->name('bank');
+    Route::get('testi', 'TestiController@dataTable')->name('testi');
 });

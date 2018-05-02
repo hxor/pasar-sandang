@@ -19,14 +19,11 @@
                         <li><a href="{{ route('admin.products.index') }}">Products</a></li>
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Banner</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{ route('admin.sliders.index') }}">Sliders</a></li>
-                        <li><a href="{{ route('admin.sponsors.index') }}">Sponsors</a></li>
-                    </ul>
-                </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Setting</span></a>
                     <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('admin.testi.index') }}">Testimony</a></li>
+                        <li><a href="{{ route('admin.sliders.index') }}">Sliders</a></li>
+                        <li><a href="{{ route('admin.sponsors.index') }}">Sponsors</a></li>
                         <li><a href="{{ route('admin.bank.index') }}">Bank</a></li>
                     </ul>
                 </li>
